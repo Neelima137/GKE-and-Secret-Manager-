@@ -153,36 +153,41 @@ Secret value: my-db-password
 
 
 diagram:
+```
+┌──────────────┐
+│   User       │
+└──────────────┘
+        │
+        ▼
+┌──────────────────────┐
+│  GKE LoadBalancer    │
+└──────────────────────┘
+        │
+        ▼
+┌─────────────────────────────┐
+│  Pod: Python Flask App      │
+│  (Kubernetes ServiceAccount)│
+└─────────────────────────────┘
+        │
+        ▼
+┌─────────────────────────────┐
+│  Workload Identity Binding  │
+│  (KSA → GSA)                │
+└─────────────────────────────┘
+        │
+        ▼
+┌─────────────────────────────┐
+│  Google Service Account     │
+│  (Secret Manager Accessor)  │
+└─────────────────────────────┘
+        │
+        ▼
+┌──────────────────────┐
+│   Secret Manager     │
+│   (db-password)      │
+└──────────────────────┘
 
-                [ User / Browser ]
-                        |
-                        v
-                +-----------------+
-                |   LoadBalancer  |
-                +-----------------+
-                        |
-                        v
-            +--------------------------+
-            |      GKE Pod             |
-            |  Python Flask App        |
-            |  (Kubernetes SA: KSA)    |
-            +--------------------------+
-                        |
-                        v
-      [Workload Identity: KSA ↔ GSA Binding]
-                        |
-                        v
-            +--------------------------+
-            |   Google Service Account |
-            |  (gke-secret-reader)     |
-            +--------------------------+
-                        |
-                        v
-                +-------------------+
-                |  Secret Manager   |
-                |  db-password      |
-                +-------------------+
-
+```
 WHY?
 
 No credentials are hard-coded.\

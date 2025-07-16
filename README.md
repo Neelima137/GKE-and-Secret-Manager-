@@ -65,11 +65,11 @@ python app.py
 Then visit: http://localhost:8080
 
 ##  Build & Push Docker Image
-
+```
 docker build -t python-secret-app .
 docker tag python-secret-app us-central1-docker.pkg.dev/<PROJECT_ID>/my-repo/python-secret-app:1.0.0
 docker push us-central1-docker.pkg.dev/<PROJECT_ID>/my-repo/python-secret-app:1.0.0
-
+```
 Deploy to GKE
 1.Enable Workload Identity on the cluster:
 ```

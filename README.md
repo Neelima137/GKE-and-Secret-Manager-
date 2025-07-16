@@ -33,19 +33,13 @@ This project demonstrates how to securely manage secrets in Google Cloud using *
 ##  Folder Structure
 
 secret/
-├── app.py # Flask app
 
-├── requirements.txt # Python deps
-
-├── Dockerfile # Docker build config
-
-├── ksa.yaml # Kubernetes Service Account (linked to GCP SA)
-
-├── deployment.yaml # App Deployment
-
-└── README.md # 📄 You're here
-
-
+├── app.py # Flask app< br / >
+├── requirements.txt # Python deps< br / >
+├── Dockerfile # Docker build config< br / >
+├── ksa.yaml # Kubernetes Service Account (linked to GCP SA)< br / >
+├── deployment.yaml # App Deployment< br / >
+└── README.md # 📄 You're here< br / >
 
 ---
 

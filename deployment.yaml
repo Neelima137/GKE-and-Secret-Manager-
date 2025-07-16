@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-secret-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: python-secret-app
+  template:
+    metadata:
+      labels:
+        app: python-secret-app
+    spec:
+      serviceAccountName: gke-app-sa
+      containers:
+      - name: python-secret-app
+        image: us-central1-docker.pkg.dev/cts07-devadin/my-repo/python-secret-app:latest
+        ports:
+        - containerPort: 8080
+        env:
+        - name: PROJECT_ID
+          value: "cts07-devadin"
+

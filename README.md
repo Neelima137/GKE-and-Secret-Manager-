@@ -34,11 +34,17 @@ This project demonstrates how to securely manage secrets in Google Cloud using *
 
 secret/
 ├── app.py # Flask app
+
 ├── requirements.txt # Python deps
+
 ├── Dockerfile # Docker build config
+
 ├── ksa.yaml # Kubernetes Service Account (linked to GCP SA)
+
 ├── deployment.yaml # App Deployment
+
 └── README.md # 📄 You're here
+
 
 
 ---

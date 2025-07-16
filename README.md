@@ -187,10 +187,10 @@ diagram:
 
 WHY?
 
-No credentials are hard-coded.
-Secrets are not baked into the Docker image.
-Pod identity is secure and auditable.
-Follows GCP best practices for GKE + Secret Manager integration.
+No credentials are hard-coded.\
+Secrets are not baked into the Docker image.\
+Pod identity is secure and auditable.\
+Follows GCP best practices for GKE + Secret Manager integration.\
 
 
 

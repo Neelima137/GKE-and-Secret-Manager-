@@ -134,16 +134,14 @@ gcloud artifacts tags list \
 ```
 
 
-Summary :
-
-How it all works: End-to-End Flow
-Step-by-step:
-1️ User sends HTTP request → hits the Python app running in GKE.
-2️ Python app starts and executes app.py.
-3️ App detects the PROJECT_ID and calls Google’s Secret Manager API.
-4️ Since the Pod is running with the Kubernetes Service Account (KSA), and KSA is mapped to GSA using Workload Identity, the Pod automatically authenticates to Google Cloud as the GSA.
-5️ GSA has roles/secretmanager.secretAccessor → it can read the secret.
-6️ Secret Manager returns the secret value.
+##  How it all works: End-to-End Flow
+Step-by-step:\
+1️ User sends HTTP request → hits the Python app running in GKE.\
+2️ Python app starts and executes app.py.\
+3️ App detects the PROJECT_ID and calls Google’s Secret Manager API.\
+4️ Since the Pod is running with the Kubernetes Service Account (KSA), and KSA is mapped to GSA using Workload Identity, the Pod automatically authenticates to Google Cloud as the GSA.\
+5️ GSA has roles/secretmanager.secretAccessor → it can read the secret.\
+6️ Secret Manager returns the secret value.\
 7️ App sends back a response like:
 ```
 Secret value: my-db-password
